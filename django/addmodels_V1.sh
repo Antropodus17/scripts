@@ -58,9 +58,3 @@ fi
 if [ -f $TEMP_FILE ]; then # REMOVE THE TEMP FILE
     rm $TEMP_FILE
 fi
-
-
-
-#dahguidsfguisdfnbjusduvhuid
-
-#bjkfdsvhdfsuihudhgudsfhu

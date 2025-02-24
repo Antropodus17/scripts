@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+# Version in development
+
 if [ "$1" == "-h" ]; then # CALL THE HELP TO EXPLAIN HOW TO USE THE SCRIPT
     echo "This script will create an app inside the apps folder"
     echo "To use type the following line:"
