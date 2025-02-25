@@ -3,9 +3,8 @@
 # Loop through each directory in REPO_DIR
 backIFS=$IFS
 
-BACK=$(pwd)
 git pull $SCRIPT_DIR
-cd $BACK
+
 
 while IFS='' read -r REPO_DIR; 
 do {
