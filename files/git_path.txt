@@ -1,4 +1,0 @@
-/media/MV-Linux/MaquinasVirtuais/a23sergiopn/Repositorios/2024-DWCC-a23sergiopn
-/home/sanclemente.local/a23sergiopn/dockers/wrapper_dapw/nginx
-/home/sanclemente.local/a23sergiopn/.user_scripts
-/home/sanclemente.local/a23sergiopn/dockers/wrapper_dwcs/django/home/sanclemente.local/a23sergiopn/dockers/wrapper_dwcs/django
