@@ -5,16 +5,13 @@ backIFS=$IFS
 
 git pull $SCRIPT_DIR
 
-
-while IFS='' read -r REPO_DIR; 
-do {
-    echo $REPO_DIR;
-    if [ -d "$REPO_DIR/.git" ]; 
-    then
+while IFS='' read -r REPO_DIR; do
+    echo $REPO_DIR
+    if [ -d "$REPO_DIR/.git" ]; then
         echo "Enviando cambios en $REPO_DIR"
-        cd "$REPO_DIR" && git push;
+        cd "$REPO_DIR" && git push
     fi
-    } &
-done < $SCRIPT_DIR/files/git_path.txt;
-wait;
-IFS=$backIFS;
+
+done <$SCRIPT_DIR/files/git_path.txt
+wait
+IFS=$backIFS
