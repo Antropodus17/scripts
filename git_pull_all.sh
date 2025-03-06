@@ -2,9 +2,9 @@
 
 # Loop through each directory in REPO_DIR
 backIFS=$IFS
-
+echo "b"
 git pull $SCRIPT_DIR
-
+echo "a"
 while IFS='' read -r REPO_DIR; do
     echo $REPO_DIR
 
