@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#FOR BETTER PERFORMANCE WE CHANGE THE AUT SOCKET OF SSH TO THE LOCAL
+
+SSH_AUTH_SOCK=$SSH_AUTH_SOCK_OLD
+
 # Loop through each directory in REPO_DIR
 backIFS=$IFS
 echo "b"
