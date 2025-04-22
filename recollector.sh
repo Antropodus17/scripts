@@ -1,16 +1,26 @@
 #!/bin/bash
-FILE=$SCRIPT_DIR/logs/red/$1.0/all_pings.log
 
-if [ ! -d $SCRIPT_DIR/logs/red/$1.0 ]; then
-    mkdir -p $SCRIPT_DIR/logs/red/$1.0
+if [ $2 ]; then
+    NAME_DIR=$2
+else
+    NAME_DIR="$1.0"
+fi
+
+FILE=$SCRIPT_DIR/logs/red/$NAME_DIR/all_pings.log
+LOG_FILE=$SCRIPT_DIR/logs/red/$NAME_DIR/valid_ip.log
+
+if [ ! -d $SCRIPT_DIR/logs/red/$NAME_DIR ]; then
+    mkdir -p $SCRIPT_DIR/logs/red/$NAME_DIR
 fi
 touch $FILE
+rm -f $LOG_FILE
+touch $LOG_FILE
 
 for IP in $(seq 1 254); do
     {
         echo "Pinging $1.$IP"
         SYSTEM="fallo"
-        ping -c 1 $1.$IP | grep "bytes from" | cut -d " " -f 4 | cut -d ":" -f 1 >>$SCRIPT_DIR/logs/red/$1.0/valid_ip.log &
+        ping -c 1 $1.$IP | grep "bytes from" | cut -d " " -f 4 | cut -d ":" -f 1 >>$LOG_FILE &
         HOST="$(ping -c 1 $1.$IP | grep "bytes from" | cut -d " " -f 6 &)"
         case $HOST in
         'ttl=64')
